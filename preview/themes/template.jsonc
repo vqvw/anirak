@@ -1,0 +1,570 @@
+{
+  "name": "$name",
+  "type": "$type",
+  "colors": {
+    // Contrast colors
+    "contrastActiveBorder": "{{ night: transparent }}", // An extra border around active elements to separate them from others for greater contrast.
+    "contrastBorder": "{{ night: transparent }}", // An extra border around elements to separate them from others for greater contrast.
+    // Base colors
+    "focusBorder": "{{ night: transparent }}", // Overall border color for focused elements. This color is only used if not overridden by a component.
+    "foreground": "{{ night: white, day: black }}", // Overall foreground color. This color is only used if not overridden by a component.
+    "widget.shadow": "{{ night: real_black }}", // Shadow color of widgets such as Find/Replace inside the editor.
+    "selection.background": "{{ night: blue, day: blue }}", // Background color of text selections in the workbench (for input fields or text areas, does not apply to selections within the editor and the terminal).
+    "descriptionForeground": "{{ night: white, day: black }}", // Foreground color for description text providing additional information, for example for a label.
+    "errorForeground": "{{ night: red, day: red }}", // Overall foreground color for error messages (this color is only used if not overridden by a component).
+    "icon.foreground": "{{ night: white, day: black }}", // The default color for icons in the workbench.
+    // Window border
+    "window.activeBorder": "--background0:background0_light--", // Border color for the active (focused) window.
+    "window.inactiveBorder": "--background1:background1_light--", // Border color for the inactive (unfocused) windows.
+    // Text colors
+    "textBlockQuote.background": "--background0:background0_light--", // Background color for block quotes in text.
+    "textBlockQuote.border": "--background1:background1_light--", // Border color for block quotes in text.
+    "textCodeBlock.background": "--background1:background1_light--", // Background color for code blocks in text.
+    "textLink.activeForeground": "--hi_blue:hi_blue_light--", // Foreground color for links in text when clicked on and on mouse hover.
+    "textLink.foreground": "--blue:blue_light--", // Foreground color for links in text.
+    "textPreformat.foreground": "{{ night: white, day: black }}", // Foreground color for preformatted text segments.
+    "textSeparator.foreground": "--blue:blue_light--", // Color for text separators.
+    // Button control
+    "button.background": "{{ night: blue, day: blue }}", // Button background color.
+    "button.foreground": "{{ night: white, day: black }}", // Button foreground color.
+    "button.hoverBackground": "--hi_blue:hi_blue_light--", // Button background color when hovering.
+    "checkbox.background": "--background2:background2_light--", // Background color of checkbox widget.
+    "checkbox.foreground": "{{ night: white, day: black }}", // Foreground color of checkbox widget.
+    "checkbox.border": "--background2_border:background2_border_light--", // Border color of checkbox widget.
+    // Dropdown control
+    "dropdown.background": "--background2:background2_light--", // Dropdown background.
+    "dropdown.listBackground": "--background2:background2_light--", // Dropdown list background.
+    "dropdown.border": "--background2_border:background2_border_light--", // Dropdown border.
+    "dropdown.foreground": "{{ night: white, day: black }}", // Dropdown foreground.
+    // Input control
+    "input.background": "--background2:background2_light--", // Input box background.
+    "input.border": "--background2_border:background2_border_light--", // Input box border.
+    "input.foreground": "{{ night: white, day: black }}", // Input box foreground.
+    "input.placeholderForeground": "--white80:white80_light--", // Input box foreground color for placeholder text.
+    "inputOption.activeBackground": "--white20:white20_light--", // Background color of activated options in input fields.
+    "inputOption.activeBorder": "{{ night: transparent }}", // Border color of activated options in input fields.
+    "inputValidation.errorBackground": "{{ night: red, day: red }}", // Input validation background color for error severity.
+    "inputValidation.errorForeground": "{{ night: white, day: black }}", // Input validation foreground color for error severity.
+    "inputValidation.errorBorder": "{{ night: transparent }}", // Input validation border color for error severity.
+    "inputValidation.infoBackground": "--background2:background2_light--", // Input validation background color for information severity.
+    "inputValidation.infoForeground": "{{ night: white, day: black }}", // Input validation foreground color for information severity.
+    "inputValidation.infoBorder": "{{ night: transparent }}", // Input validation border color for information severity.
+    "inputValidation.warningBackground": "--background2:background2_light--", // Input validation background color for information warning.
+    "inputValidation.warningForeground": "{{ night: white, day: black }}", // Input validation foreground color for warning severity.
+    "inputValidation.warningBorder": "{{ night: transparent }}", // Input validation border color for warning severity.
+    // Scrollbar control
+    "scrollbar.shadow": "{{ night: transparent }}", // Scrollbar slider shadow to indicate that the view is scrolled.
+    "scrollbarSlider.activeBackground": "--hi_blue:hi_blue_light--", // Scrollbar slider background color when clicked on.
+    "scrollbarSlider.background": "--white20:white20_light--", // Scrollbar slider background color.
+    "scrollbarSlider.hoverBackground": "{{ night: blue, day: blue }}", // Scrollbar slider background color when hovering.
+    // Badge
+    "badge.foreground": "{{ night: white, day: black }}", // Badge foreground color.
+    "badge.background": "{{ night: blue, day: blue }}", // Badge background color.
+    // Progress bar
+    "progressBar.background": "--background1:background1_light--", // Background color of the progress bar shown for long running operations.
+    // List and trees
+    "list.activeSelectionBackground": "{{ night: blue, day: blue }}", // List/Tree background color for the selected item when the list/tree is active.
+    "list.activeSelectionForeground": "{{ night: white, day: black }}", // List/Tree foreground color for the selected item when the list/tree is active.
+    "list.dropBackground": "--hi_blue:hi_blue_light--", // List/Tree drag and drop background when moving items around using the mouse.
+    "list.focusBackground": "{{ night: blue, day: blue }}", // List/Tree background color for the focused item when the list/tree is active.
+    "list.focusForeground": "{{ night: white, day: black }}", // List/Tree foreground color for the focused item when the list/tree is active. An active list/tree has keyboard focus, an inactive does not.
+    "list.highlightForeground": "{{ night: white, day: black }}", // List/Tree foreground color of the match highlights when searching inside the list/tree.
+    "list.hoverBackground": "--blue40:blue40_light--", // List/Tree background when hovering over items using the mouse.
+    "list.hoverForeground": "{{ night: white, day: black }}", // List/Tree foreground when hovering over items using the mouse.
+    "list.inactiveSelectionBackground": "--background1_border:background1_border_light--", // List/Tree background color for the selected item when the list/tree is inactive.
+    "list.inactiveSelectionForeground": "{{ night: white, day: black }}", // List/Tree foreground color for the selected item when the list/tree is inactive. An active list/tree has keyboard focus, an inactive does not.
+    "list.inactiveFocusBackground": "--blue40:blue40_light--", // List background color for the focused item when the list is inactive. An active list has keyboard focus, an inactive does not. Currently only supported in lists.
+    "list.invalidItemForeground": "{{ night: red, day: red }}", // List/Tree foreground color for invalid items, for example an unresolved root in explorer.
+    "list.errorForeground": "{{ night: red, day: red }}", // Foreground color of list items containing errors.
+    "list.warningForeground": "--yellow:yellow_light--", // Foreground color of list items containing warnings.
+    "listFilterWidget.background": "#653723", // List/Tree Filter background color of typed text when searching inside the list/tree.
+    "listFilterWidget.outline": "{{ night: transparent }}", // List/Tree Filter Widget's outline color of typed text when searching inside the list/tree.
+    "listFilterWidget.noMatchesOutline": "{{ night: red, day: red }}", // List/Tree Filter Widget's outline color when no match is found of typed text when searching inside the list/tree.
+    "list.filterMatchBackground": "#ea5c0055", // Background color of the filtered matches in lists and trees.
+    "list.filterMatchBorder": "{{ night: transparent }}", // Border color of the filtered matches in lists and trees.
+    "tree.indentGuidesStroke": "--white80:white80_light--", // Tree Widget's stroke color for indent guides.
+    "list.deemphasizedForeground": "--white40:white40_light--", // List/Tree foreground color for items that are deemphasized.
+    // Activity bar
+    "activityBar.background": "--background1:background1_light--", // Activity Bar background color.
+    "activityBar.dropBackground": "--background1_border:background1_border_light--", // Drag and drop feedback color for the Activity Bar items.
+    "activityBar.foreground": "{{ night: white, day: black }}", // Activity Bar foreground color (for example used for the icons).
+    "activityBar.inactiveForeground": "--bluewhite40:bluewhite40_light--", // Activity Bar item foreground color when it is inactive.
+    "activityBar.border": "{{ night: transparent }}", // Activity Bar border color with the Side Bar.
+    "activityBarBadge.background": "{{ night: blue, day: blue }}", // Activity notification badge background color.
+    "activityBarBadge.foreground": "{{ night: white, day: black }}", // Activity notification badge foreground color.
+    "activityBar.activeBorder": "{{ night: transparent }}", // Activity Bar active indicator border color.
+    "activityBar.activeBackground": "{{ night: transparent }}", // Activity Bar optional background color for the active element.
+    "activityBar.activeFocusBorder": "{{ night: transparent }}", // Activity bar focus border color for the active item.
+    // Side bar
+    "sideBar.background": "--background1:background1_light--", // Side Bar background color.
+    "sideBar.foreground": "--bluewhite80:bluewhite80_light--", // Side Bar foreground color. The Side Bar is the container for views like Explorer and Search.
+    "sideBar.border": "--background1_border:background1_border_light--", // Side Bar border color on the side separating the editor.
+    "sideBar.dropBackground": "--background1_border:background1_border_light--", // Drag and drop feedback color for the side bar sections. The color should have transparency so that the side bar sections can still shine through.
+    "sideBarTitle.foreground": "--bluewhite80:bluewhite80_light--", // Side Bar title foreground color.
+    "sideBarSectionHeader.background": "{{ night: transparent }}", // Side Bar section header background color.
+    "sideBarSectionHeader.foreground": "--bluewhite80:bluewhite80_light--", // Side Bar section header foreground color.
+    "sideBarSectionHeader.border": "{{ night: transparent }}", // Side bar section header border color.
+    // Minimap
+    "minimap.findMatchHighlight": "#d18616", // Highlight color for matches from search within files.
+    "minimap.selectionHighlight": "{{ night: blue, day: blue }}", // Highlight color for the editor selection.
+    "minimap.errorHighlight": "{{ night: red, day: red }}", // Highlight color for errors within the editor.
+    "minimap.warningHighlight": "--green:green_light--", //Highlight color for warnings within the editor.
+    "minimap.background": "--background0:background0_light--", // Minimap background color.
+    "minimapSlider.background": "--bluewhite10:bluewhite10_light--", // Minimap slider background color.
+    "minimapSlider.hoverBackground": "--bluewhite20:bluewhite20_light--", // Minimap slider background color when hovering.
+    "minimapSlider.activeBackground": "--bluewhite30:bluewhite30_light--", // Minimap slider background color when clicked on.
+    "minimapGutter.addedBackground": "--hi_green:hi_green_light--", // Minimap gutter color for added content.
+    "minimapGutter.modifiedBackground": "--hi_yellow:hi_yellow_light--", // Minimap gutter color for modified content.
+    "minimapGutter.deletedBackground": "--hi_red:hi_red_light--", // Minimap gutter color for deleted content.
+    // Editor groups and tabs
+    "editorGroup.border": "--background1_border:background1_border_light--", // Color to separate multiple editor groups from each other.
+    "editorGroup.dropBackground": "--background1_border:background1_border_light--", // Background color when dragging editors around.
+    "editorGroupHeader.noTabsBackground": "--background1:background1_light--", // Background color of the editor group title header when Tabs are disabled.
+    "editorGroupHeader.tabsBackground": "--background1:background1_light--", // Background color of the Tabs container.
+    "editorGroupHeader.tabsBorder": "{{ night: transparent }}", // Border color of the editor group title header when tabs are enabled.
+    "editorGroup.emptyBackground": "--background0:background0_light--", // Background color of an empty editor group.
+    "editorGroup.focusedEmptyBorder": "{{ night: transparent }}", // Border color of an empty editor group that is focused.
+    "tab.activeBackground": "--background0:background0_light--", // Active Tab background color in an active group.
+    "tab.unfocusedActiveBackground": "--background0:background0_light--", // Active Tab background color in an inactive editor group.
+    "tab.activeForeground": "{{ night: white, day: black }}", // Active Tab foreground color in an active group.
+    "tab.border": "--background1_border:background1_border_light--", // Border to separate Tabs from each other.
+    "tab.activeBorder": "{{ night: transparent }}", // Bottom border for the active tab.
+    "tab.unfocusedActiveBorder": "{{ night: transparent }}", // Bottom border for the active tab in an inactive editor group.
+    "tab.activeBorderTop": "{{ night: transparent }}", // Top border for the active tab.
+    "tab.unfocusedActiveBorderTop": "{{ night: transparent }}", // Top border for the active tab in an inactive editor group
+    "tab.inactiveBackground": "--background1:background1_light--", // Inactive Tab background color.
+    "tab.inactiveForeground": "--bluewhite80:bluewhite80_light--", // Inactive Tab foreground color in an active group.
+    "tab.unfocusedActiveForeground": "{{ night: white, day: black }}", // Active tab foreground color in an inactive editor group.
+    "tab.unfocusedInactiveForeground": "--bluewhite80:bluewhite80_light--", // Inactive tab foreground color in an inactive editor group.
+    "tab.hoverBackground": null, // Tab background color when hovering.
+    "tab.unfocusedHoverBackground": null, // Tab background color in an unfocused group when hovering.
+    "tab.hoverBorder": "{{ night: transparent }}", // Border to highlight tabs when hovering.
+    "tab.unfocusedHoverBorder": "{{ night: transparent }}", // Border to highlight tabs in an unfocused group when hovering.
+    "tab.activeModifiedBorder": "{{ night: transparent }}", // Border on the top of modified (dirty) active tabs in an active group.
+    "tab.inactiveModifiedBorder": "{{ night: transparent }}", // Border on the top of modified (dirty) inactive tabs in an active group.
+    "tab.unfocusedActiveModifiedBorder": "{{ night: transparent }}", // Border on the top of modified (dirty) active tabs in an unfocused group.
+    "tab.unfocusedInactiveModifiedBorder": "{{ night: transparent }}", // Border on the top of modified (dirty) inactive tabs in an unfocused group.
+    "editorPane.background": "--background1_border:background1_border_light--", // Background color of the editor pane visible on the left and right side of the centered editor layout.
+    // Editor colors
+    "editor.background": "--background0:background0_light--", // Editor background color.
+    "editor.foreground": "{{ night: white, day: black }}", // Editor default foreground color.
+    "editorLineNumber.foreground": "--bluewhite50:bluewhite50_light--", // Color of editor line numbers.
+    "editorLineNumber.activeForeground": "--bluewhite:bluewhite_light--", // Color of the active editor line number.
+    "editorCursor.background": "{{ night: white, day: black }}", // The background color of the editor cursor. Allows customizing the color of a character overlapped by a block cursor.
+    "editorCursor.foreground": "{{ night: blue, day: blue }}", // Color of the editor cursor.
+    "editor.selectionBackground": "--blue40:blue40_light--", // Color of the editor selection.
+    "editor.selectionForeground": null, // Color of the selected text for high contrast.
+    "editor.inactiveSelectionBackground": "--blue40:blue40_light--", // Color of the selection in an inactive editor. The color must not be opaque so as not to hide underlying decorations.
+    "editor.selectionHighlightBackground": "--magenta40:magenta40_light--", // Color for regions with the same content as the selection. The color must not be opaque so as not to hide underlying decorations.
+    "editor.selectionHighlightBorder": "{{ night: transparent }}", // Border color for regions with the same content as the selection.
+    "editor.wordHighlightBackground": "--magenta40:magenta40_light--", // Background color of a symbol during read-access, for example when reading a variable. The color must not be opaque so as not to hide underlying decorations.
+    "editor.wordHighlightBorder": "{{ night: transparent }}", // Border color of a symbol during read-access, for example when reading a variable.
+    "editor.wordHighlightStrongBackground": "--bluewhite40:bluewhite40_light--", // Background color of a symbol during write-access, for example when writing to a variable. The color must not be opaque so as not to hide underlying decorations.
+    "editor.wordHighlightStrongBorder": "{{ night: transparent }}", // Border color of a symbol during write-access, for example when writing to a variable.
+    "editor.findMatchBackground": "#ea5c0038", // Color of the current search match.
+    "editor.findMatchHighlightBackground": "#ea5c0055", // Color of the other search matches. The color must not be opaque so as not to hide underlying decorations.
+    "editor.findRangeHighlightBackground": "#3a3d4166", // Color the range limiting the search (Enable 'Find in Selection' in the find widget). The color must not be opaque so as not to hide underlying decorations.
+    "editor.findMatchBorder": "{{ night: transparent }}", // Border color of the current search match.
+    "editor.findMatchHighlightBorder": "{{ night: transparent }}", // Border color of the other search matches.
+    "editor.findRangeHighlightBorder": "{{ night: transparent }}", // Border color the range limiting the search (Enable 'Find in Selection' in the find widget).
+    "searchEditor.findMatchBackground": "#ea5c0038", // Color of the editor's results.
+    "searchEditor.findMatchBorder": "{{ night: transparent }}", // Border color of the editor's results.
+    "searchEditor.textInputBorder": "{{ night: transparent }}", // Search editor text input box border.
+    "editor.hoverHighlightBackground": "--bluewhite10:bluewhite10_light--", // Highlight below the word for which a hover is shown. The color must not be opaque so as not to hide underlying decorations.
+    "editor.lineHighlightBackground": "--background1:background1_light--", // Background color for the highlight of line at the cursor position.
+    "editor.lineHighlightBorder": "{{ night: transparent }}", // Background color for the border around the line at the cursor position.
+    "editorLink.activeForeground": "{{ night: white, day: black }}", // Color of active links.
+    "editor.rangeHighlightBackground": "#ffffff0b", // Background color of highlighted ranges, used by Quick Open, Symbol in File and Find features. The color must not be opaque so as not to hide underlying decorations.
+    "editor.rangeHighlightBorder": "{{ night: transparent }}", // Background color of the border around highlighted ranges.
+    "editor.symbolHighlightBackground": "#ea5c0055", // Background color of highlighted symbol. The color must not be opaque so as not to hide underlying decorations.
+    "editor.symbolHighlightBorder": "{{ night: transparent }}", // Background color of the border around highlighted symbols.
+    "editorWhitespace.foreground": "--bluewhite20:bluewhite20_light--", // Color of whitespace characters in the editor.
+    "editorIndentGuide.background": "--bluewhite10:bluewhite10_light--", // Color of the editor indentation guides.
+    "editorIndentGuide.activeBackground": "--bluewhite40:bluewhite40_light--", // Color of the active editor indentation guide.
+    "editorRuler.foreground": "--bluewhite20:bluewhite20_light--", // Color of the editor rulers.
+    "editorCodeLens.foreground": "--bluewhite40:bluewhite40_light--", // Foreground color of an editor CodeLens.
+    "editorLightBulb.foreground": "--yellow:yellow_light--", // The color used for the lightbulb actions icon.
+    "editorLightBulbAutoFix.foreground": "--green:green_light--", // The color used for the lightbulb auto fix actions icon.
+    "editorBracketMatch.background": "--background2:background2_light--", // Background color behind matching brackets.
+    "editorBracketMatch.border": "{{ night: transparent }}", // Color for matching brackets boxes.
+    "editor.foldBackground": "--blue10:blue10_light--", // Background color for folded ranges. The color must not be opaque so as not to hide underlying decorations.
+    "editorOverviewRuler.border": "{{ night: transparent }}", // Color of the overview ruler border.
+    "editorOverviewRuler.findMatchForeground": "#d186167e", // Overview ruler marker color for find matches. The color must not be opaque so as not to hide underlying decorations.
+    "editorOverviewRuler.rangeHighlightForeground": "#007acc99", // Overview ruler marker color for highlighted ranges, like by the Quick Open, Symbol in File and Find features. The color must not be opaque so as not to hide underlying decorations.
+    "editorOverviewRuler.selectionHighlightForeground": "#a0a0a0cc", // Overview ruler marker color for selection highlights. The color must not be opaque so as not to hide underlying decorations.
+    "editorOverviewRuler.wordHighlightForeground": "#a0a0a0cc", // Overview ruler marker color for symbol highlights. The color must not be opaque so as not to hide underlying decorations.
+    "editorOverviewRuler.wordHighlightStrongForeground": "#c0a0c0cc", // Overview ruler marker color for write-access symbol highlights. The color must not be opaque so as not to hide underlying decorations.
+    "editorOverviewRuler.modifiedForeground": "--hi_yellow:hi_yellow_light--", // Overview ruler marker color for modified content.
+    "editorOverviewRuler.addedForeground": "--hi_green:hi_green_light--", // Overview ruler marker color for added content.
+    "editorOverviewRuler.deletedForeground": "--hi_red:hi_red_light--", // Overview ruler marker color for deleted content.
+    "editorOverviewRuler.errorForeground": "{{ night: red, day: red }}", // Overview ruler marker color for errors.
+    "editorOverviewRuler.warningForeground": "--green:green_light--", // Overview ruler marker color for warnings.
+    "editorOverviewRuler.infoForeground": "--background2:background2_light--", // Overview ruler marker color for infos.
+    "editorOverviewRuler.bracketMatchForeground": "--background2:background2_light--", // Overview ruler marker color for matching brackets.
+    "editorError.foreground": "{{ night: red, day: red }}", // Foreground color of error squiggles in the editor.
+    "editorError.border": "{{ night: transparent }}", // Border color of error boxes in the editor.
+    "editorWarning.foreground": "--green:green_light--", // Foreground color of warning squiggles in the editor.
+    "editorWarning.border": "{{ night: transparent }}", // Border color of warning boxes in the editor.
+    "editorInfo.foreground": "--background2:background2_light--", // Foreground color of info squiggles in the editor.
+    "editorInfo.border": "{{ night: transparent }}", // Border color of info boxes in the editor.
+    "editorHint.foreground": "{{ night: white, day: black }}", // Foreground color of hints in the editor.
+    "editorHint.border": "{{ night: transparent }}", // Border color of hint boxes in the editor.
+    "problemsErrorIcon.foreground": "{{ night: red, day: red }}", // The color used for the problems error icon.
+    "problemsWarningIcon.foreground": "--yellow:yellow_light--", // The color used for the problems warning icon.
+    "problemsInfoIcon.foreground": "--background2:background2_light--", // The color used for the problems info icon.
+    "editorUnnecessaryCode.border": "--hi_yellow:hi_yellow_light--", // Border color of unnecessary (unused) source code in the editor.
+    "editorUnnecessaryCode.opacity": "#00000080", // Opacity of unnecessary (unused) source code in the editor.
+    "editorGutter.background": "--background0:background0_light--", // Background color of the editor gutter. The gutter contains the glyph margins and the line numbers.
+    "editorGutter.modifiedBackground": "--hi_yellow:hi_yellow_light--", // Editor gutter background color for lines that are modified.
+    "editorGutter.addedBackground": "--hi_green:hi_green_light--", // Editor gutter background color for lines that are added.
+    "editorGutter.deletedBackground": "--hi_red:hi_red_light--", // Editor gutter background color for lines that are deleted.
+    "editorGutter.commentRangeForeground": "--bluewhite40:bluewhite40_light--", // Editor gutter decoration color for commenting ranges.
+    // Diff editor colors
+    "diffEditor.insertedTextBackground": "--green40:green40_light--", // Background color for text that got inserted. The color must not be opaque so as not to hide underlying decorations.
+    "diffEditor.insertedTextBorder": "{{ night: transparent }}", // Outline color for the text that got inserted.
+    "diffEditor.removedTextBackground": "--red40:red40_light--", // Background color for text that got removed. The color must not be opaque so as not to hide underlying decorations.
+    "diffEditor.removedTextBorder": "{{ night: transparent }}", // Outline color for text that got removed.
+    "diffEditor.border": "--background1_border:background1_border_light--", // Border color between the two text editors.
+    // Editor widget colors
+    "editorWidget.foreground": "{{ night: white, day: black }}", // Foreground color of editor widgets, such as find/replace.
+    "editorWidget.background": "--background2:background2_light--", // Background color of editor widgets, such as Find/Replace.
+    "editorWidget.border": "--background2_border:background2_border_light--", // Border color of the editor widget unless the widget does not contain a border or defines its own border color.
+    "editorWidget.resizeBorder": "--background2_border:background2_border_light--", // Border color of the resize bar of editor widgets. The color is only used if the widget chooses to have a resize border and if the color is not overridden by a widget.
+    "editorSuggestWidget.background": "--background2:background2_light--", // Background color of the suggestion widget.
+    "editorSuggestWidget.border": "--background2_border:background2_border_light--", // Border color of the suggestion widget.
+    "editorSuggestWidget.foreground": "--bluewhite80:bluewhite80_light--", // Foreground color of the suggestion widget.
+    "editorSuggestWidget.highlightForeground": "{{ night: white, day: black }}", // Color of the match highlights in the suggestion widget.
+    "editorSuggestWidget.selectedBackground": "--bluewhite20:bluewhite20_light--", // Background color of the selected entry in the suggestion widget.
+    "editorHoverWidget.foreground": "{{ night: white, day: black }}", // Foreground color of the editor hover.
+    "editorHoverWidget.background": "--background2:background2_light--", // Background color of the editor hover.
+    "editorHoverWidget.border": "--background2_border:background2_border_light--", // Border color of the editor hover.
+    "editorHoverWidget.statusBarBackground": "{{ night: blue, day: blue }}", // Background color of the editor hover status bar.
+    "debugExceptionWidget.background": "--background2:background2_light--", // Exception widget background color.
+    "debugExceptionWidget.border": "--background2_border:background2_border_light--", // Exception widget border color.
+    "editorMarkerNavigation.background": "--background1:background1_light--", // Editor marker navigation widget background.
+    "editorMarkerNavigationError.background": "{{ night: red, day: red }}", // Editor marker navigation widget error color.
+    "editorMarkerNavigationWarning.background": "--yellow:yellow_light--", // Editor marker navigation widget warning color.
+    "editorMarkerNavigationInfo.background": "--background1:background1_light--", // Editor marker navigation widget info color.
+    // Peak View colors
+    "peekView.border": "--background2_border:background2_border_light--", // Color of the peek view borders and arrow.
+    "peekViewEditor.background": "--background1_border:background1_border_light--", // Background color of the peek view editor.
+    "peekViewEditorGutter.background": "--background1_border:background1_border_light--", // Background color of the gutter in the peek view editor.
+    "peekViewEditor.matchHighlightBackground": "#ff8f0099", // Match highlight color in the peek view editor.
+    "peekViewEditor.matchHighlightBorder": "{{ night: transparent }}", // Match highlight border color in the peek view editor.
+    "peekViewResult.background": "--background2:background2_light--", // Background color of the peek view result list.
+    "peekViewResult.fileForeground": "{{ night: white, day: black }}", // Foreground color for file nodes in the peek view result list.
+    "peekViewResult.lineForeground": "--bluewhite80:bluewhite80_light--", // Foreground color for line nodes in the peek view result list.
+    "peekViewResult.matchHighlightBackground": "#ea5c004d", // Match highlight color in the peek view result list.
+    "peekViewResult.selectionBackground": "--blue40:blue40_light--", // Background color of the selected entry in the peek view result list.
+    "peekViewResult.selectionForeground": "{{ night: white, day: black }}", // Foreground color of the selected entry in the peek view result list.
+    "peekViewTitle.background": "--background2:background2_light--", // Background color of the peek view title area.
+    "peekViewTitleDescription.foreground": "--bluewhite80:bluewhite80_light--", // Color of the peek view title info.
+    "peekViewTitleLabel.foreground": "{{ night: white, day: black }}", // Color of the peek view title.
+    // Panel colors
+    "panel.background": "--background0:background0_light--", // Panel background color.
+    "panel.border": "--background1_border:background1_border_light--", // Panel border color to separate the panel from the editor.
+    "panel.dropBackground": "--background1_border:background1_border_light--", // Drag and drop feedback color for the panel title items. The color should have transparency so that the panel entries can still shine through.
+    "panelTitle.activeBorder": "{{ night: transparent }}", // Border color for the active panel title.
+    "panelTitle.activeForeground": "{{ night: white, day: black }}", // Title color for the active panel.
+    "panelTitle.inactiveForeground": "--bluewhite40:bluewhite40_light--", // Title color for the inactive panel.
+    "panelInput.border": "--background1_border:background1_border_light--", // Input box border for inputs in the panel.
+    "imagePreview.border": "--background2_border:background2_border_light--", // Border color for image in image preview.
+    // Status bar colors
+    "statusBar.background": "--background1:background1_light--", // Standard Status Bar background color.
+    "statusBar.foreground": "{{ night: white, day: black }}", // Status Bar foreground color.
+    "statusBar.border": "{{ night: transparent }}", // Status Bar border color separating the Status Bar and editor.
+    "statusBar.debuggingBackground": "{{ night: blue, day: blue }}", // Status Bar background color when a program is being debugged.
+    "statusBar.debuggingForeground": "{{ night: white, day: black }}", // Status Bar foreground color when a program is being debugged.
+    "statusBar.debuggingBorder": "{{ night: transparent }}", // Status Bar border color separating the Status Bar and editor when a program is being debugged.
+    "statusBar.noFolderBackground": "--background1:background1_light--", // Status Bar background color when no folder is opened.
+    "statusBar.noFolderForeground": "{{ night: white, day: black }}", // Status Bar foreground color when no folder is opened.
+    "statusBar.noFolderBorder": "{{ night: transparent }}", // Status Bar border color separating the Status Bar and editor when no folder is opened.
+    "statusBarItem.activeBackground": "--bluewhite20:bluewhite20_light--", // Status Bar item background color when clicking.
+    "statusBarItem.hoverBackground": "--bluewhite20:bluewhite20_light--", // Status Bar item background color when hovering.
+    "statusBarItem.prominentForeground": "--cyan:cyan_light--", // Status Bar prominent items foreground color.
+    "statusBarItem.prominentBackground": "--bluewhite10:bluewhite10_light--", // Status Bar prominent items background color.
+    "statusBarItem.prominentHoverBackground": "--bluewhite20:bluewhite20_light--", // Status Bar prominent items background color when hovering.
+    "statusBarItem.remoteBackground": "{{ night: blue, day: blue }}", // Background color for the remote indicator on the status bar.
+    "statusBarItem.remoteForeground": "{{ night: white, day: black }}", // Foreground color for the remote indicator on the status bar.
+    // Title bar
+    "titleBar.activeBackground": "--background0:background0_light--", // Title Bar background when the window is active.
+    "titleBar.activeForeground": "--bluewhite80:bluewhite80_light--", // Title Bar foreground when the window is active.
+    "titleBar.inactiveBackground": "--background1:background1_light--", // Title Bar background when the window is inactive.
+    "titleBar.inactiveForeground": "--bluewhite40:bluewhite40_light--", // Title Bar foreground when the window is inactive.
+    "titleBar.border": "--background0:background0_light--", // Title bar border color.
+    // Menu bar colors
+    "menubar.selectionForeground": "{{ night: white, day: black }}", // Foreground color of the selected menu item in the menubar.
+    "menubar.selectionBackground": "--blue:blue_light--", // Background color of the selected menu item in the menubar.
+    "menubar.selectionBorder": "{{ night: transparent }}", // Border color of the selected menu item in the menubar.
+    "menu.foreground": "{{ night: white, day: black }}", // Foreground color of menu items.
+    "menu.background": "--background2:background2_light--", // Background color of menu items.
+    "menu.selectionForeground": "{{ night: white, day: black }}", // Foreground color of the selected menu item in menus.
+    "menu.selectionBackground": "{{ night: blue, day: blue }}", // Background color of the selected menu item in menus.
+    "menu.selectionBorder": "{{ night: transparent }}", // Border color of the selected menu item in menus.
+    "menu.separatorBackground": "{{ night: transparent }}", // Color of a separator menu item in menus.
+    "menu.border": "--background2_border:background2_border_light--", // Border color of menus.
+    // Integrated terminal colors
+    "terminal.background": "--background0:background0_light--", // The background of the Integrated Terminal's viewport.
+    "terminal.border": "--background1_border:background1_border_light--", // The color of the border that separates split panes within the terminal. This defaults to panel.border.
+    "terminal.foreground": "--hi_white:hi_white_light--", // The default foreground color of the Integrated Terminal.
+    "terminal.ansiBlack": "--black:black_light--", // 'Black' ANSI color in the terminal.
+    "terminal.ansiBlue": "--blue:blue_light--", // 'Blue' ANSI color in the terminal.
+    "terminal.ansiBrightBlack": "--hi_black:hi_black_light--", // 'BrightBlack' ANSI color in the terminal.
+    "terminal.ansiBrightBlue": "--hi_blue:hi_blue_light--", // 'BrightBlue' ANSI color in the terminal.
+    "terminal.ansiBrightCyan": "--hi_cyan:hi_cyan_light--", // 'BrightCyan' ANSI color in the terminal.
+    "terminal.ansiBrightGreen": "--hi_green:hi_green_light--", // 'BrightGreen' ANSI color in the terminal.
+    "terminal.ansiBrightMagenta": "--hi_magenta:hi_magenta_light--", // 'BrightMagenta' ANSI color in the terminal.
+    "terminal.ansiBrightRed": "--hi_red:hi_red_light--", // 'BrightRed' ANSI color in the terminal.
+    "terminal.ansiBrightWhite": "--hi_white:hi_white_light--", // 'BrightWhite' ANSI color in the terminal.
+    "terminal.ansiBrightYellow": "--hi_yellow:hi_yellow_light--", // 'BrightYellow' ANSI color in the terminal.
+    "terminal.ansiCyan": "--cyan:cyan_light--", // 'Cyan' ANSI color in the terminal.
+    "terminal.ansiGreen": "--green:green_light--", // 'Green' ANSI color in the terminal.
+    "terminal.ansiMagenta": "--magenta:magenta_light--", // 'Magenta' ANSI color in the terminal.
+    "terminal.ansiRed": "{{ night: red, day: red }}", // 'Red' ANSI color in the terminal.
+    "terminal.ansiWhite": "{{ night: white, day: black }}", // 'White' ANSI color in the terminal.
+    "terminal.ansiYellow": "--yellow:yellow_light--", // 'Yellow' ANSI color in the terminal.
+    "terminal.selectionBackground": "--white20:white20_light--", // The selection background color of the terminal.
+    "terminalCursor.background": "--background0:background0_light--", // The background color of the terminal cursor. Allows customizing the color of a character overlapped by a block cursor.
+    "terminalCursor.foreground": "{{ night: white, day: black }}", // The foreground color of the terminal cursor.
+    // Debug
+    "debugToolBar.background": "--background2:background2_light--", // Debug toolbar background color.
+    "debugToolBar.border": "--background2_border:background2_border_light--", // Debug toolbar border color.
+    "editor.stackFrameHighlightBackground": "--blue40:blue40_light--", // Background color of the top stack frame highlight in the editor.
+    "editor.focusedStackFrameHighlightBackground": "{{ night: blue, day: blue }}", // Background color of the focused stack frame highlight in the editor.
+    "debugIcon.breakpointForeground": "{{ night: red, day: red }}", // Icon color for breakpoints.
+    "debugIcon.startForeground": "--magenta:magenta_light--", // Debug toolbar icon for start debugging.
+    "debugIcon.pauseForeground": "--magenta:magenta_light--", // Debug toolbar icon for pause.
+    "debugIcon.stopForeground": "{{ night: red, day: red }}", // Debug toolbar icon for stop.
+    "debugIcon.disconnectForeground": "{{ night: red, day: red }}", // Debug toolbar icon for disconnect.
+    "debugIcon.restartForeground": "--green:green_light--", // Debug toolbar icon for restart.
+    "debugIcon.stepOverForeground": "--magenta:magenta_light--", // Debug toolbar icon for step over.
+    "debugIcon.stepIntoForeground": "--magenta:magenta_light--", // Debug toolbar icon for step into.
+    "debugIcon.stepOutForeground": "--magenta:magenta_light--", // Debug toolbar icon for step over.
+    "debugIcon.continueForeground": "--magenta:magenta_light--", // Debug toolbar icon for continue.
+    "debugIcon.stepBackForeground": "--magenta:magenta_light--", // Debug toolbar icon for step back.
+    // Settings
+    "settings.modifiedItemIndicator": "--blue:blue_light--" //The line that indicates a modified setting.
+  },
+  "tokenColors": [
+    // Functions
+    {
+      "scope": [
+        "keyword.package",
+        "keyword.function",
+        "storage.type.function",
+        "storage.type.sub",
+        "keyword.control.def",
+        "storage.type.config",
+        "keyword.other.fn",
+        "storage.type.model"
+      ],
+      "settings": {
+        "foreground": "--magenta:magenta_light--",
+        "fontStyle": "bold"
+      }
+    },
+    // Types
+    {
+      "scope": [
+        "storage",
+        "keyword.type",
+        "keyword.import",
+        "keyword.other.class",
+        "keyword.other.var",
+        "keyword.other.namespace",
+        "variable.language.this",
+        "keyword.other.DML",
+        "keyword.other.sql",
+        "support.type.property-name.css",
+        "variable.css",
+        "keyword.other.DDL",
+        "storage.type",
+        "storage.modifier.perl",
+        "support.type",
+        "entity.name.tag",
+        "entity.name.type.ts",
+        "entity.name.type.tsx",
+        "entity.name.type.cpp",
+        "entity.other.inherited-class",
+        "keyword.control.lua"
+      ],
+      "settings": {
+        "foreground": "--magenta:magenta_light--"
+      }
+    },
+    // Punctuation and keywords
+    {
+      "scope": [
+        "keyword",
+        "punctuation",
+        "keyword.operator",
+        "meta.brace",
+        "meta.selector",
+        "meta.tag",
+        "punctuation.section.embedded.begin.php",
+        "punctuation.section.embedded.end.php",
+        "source.php",
+        "source.prisma",
+        "storage.modifier.async",
+        "meta.property-list",
+        "punctuation.section.embedded.begin",
+        "punctuation.section.embedded.end",
+        "source.css",
+        "source.perl",
+        "punctuation.definition.string.begin.shell",
+        "punctuation.definition.string.end.shell"
+      ],
+      "settings": {
+        "foreground": "--bluewhiteA0:bluewhiteA0_light--"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name.pseudo-class",
+        "entity.name.function.attribute",
+        "meta.group.regexp",
+        "meta.selector.css"
+      ],
+      "settings": {
+        "foreground": "--bluewhiteA0:bluewhiteA0_light--",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["punctuation.definition.comment", "comment"],
+      "settings": {
+        "foreground": "--bluewhite50:bluewhite50_light--",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "support",
+        "variable.other.object.property",
+        "variable.other.property",
+        "entity.name.tag.css",
+        "entity.other.attribute-name",
+        "meta.object-literal.key"
+      ],
+      "settings": {
+        "foreground": "{{ night: white, day: black }}",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "support.function",
+        "entity.other.attribute-name.class.css",
+        "meta.function-call",
+        "entity.name.function.js"
+      ],
+      "settings": {
+        "foreground": "--white:cyan_light--",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function",
+        "entity.name.tag.wildcard",
+        "entity.name.type.config",
+        "entity.name.package",
+        "entity.name.type.model",
+        "keyword.go.mod"
+      ],
+      "settings": {
+        "foreground": "{{ night: white, day: black }}"
+        // "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "entity.name.function.macro",
+      "settings": {
+        "foreground": "--cyan:cyan_light--"
+        // "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": [
+        "support.class",
+        "support.type.property-name.json",
+        "variable",
+        "source",
+        "source.swift",
+        "entity.name",
+        "entity.name.tag.yaml",
+        "constant.language.boolean.yaml",
+        "support.constant.property-value.css",
+        "support.constant.color",
+        "support.constant",
+        "entity.other",
+        "entity.other.attribute-name.css",
+        "entity.other.attribute-name.localname",
+        "entity.name.type",
+        "text.html",
+        "meta.jsx.children",
+        "entity.other.attribute-name.class",
+        "entity.other.attribute-name.id",
+        "meta.property-value.css",
+        "string.other.math",
+        "punctuation.section.embedded.begin.swift",
+        "support.function.any-method"
+      ],
+      "settings": {
+        "foreground": "{{ night: white, day: black }}"
+      }
+    },
+    {
+      "scope": [
+        "string",
+        "punctuation.definition.string",
+        "storage.modifier.import"
+      ],
+      "settings": {
+        "foreground": "--blue:blue_light--"
+      }
+    },
+    {
+      "scope": ["entity.name.import"],
+      "settings": {
+        "foreground": "--blue:blue_light--",
+        "fontStyle": "underline"
+      }
+    },
+    {
+      "scope": ["constant", "keyword.other.unit"],
+      "settings": {
+        "foreground": "--green:green_light--",
+        "fontStyle": ""
+      }
+    },
+    {
+      "scope": "invalid.deprecated",
+      "settings": {
+        "foreground": "{{ night: red, day: red }}"
+      }
+    },
+    // {
+    //   "scope": ["entity.other.attribute-name", "meta.object-literal.key"],
+    //   "settings": {
+    //     "foreground": "{{ night: white, day: black }}",
+    //     "fontStyle": "italic"
+    //   }
+    // },
+    {
+      "scope": [
+        "storage.modifier",
+        "storage.type.modifier",
+        "fenced_code.block.language",
+        "keyword.other.declaration-specifier.accessibility",
+        "storage.type.class.jsdoc",
+        "variable.prop.css",
+        "support.class.component"
+      ],
+      "settings": {
+        "foreground": "--cyan:cyan_light--",
+        "fontStyle": "italic"
+      }
+    }
+  ]
+}

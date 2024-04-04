@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root #night {
+        --bg0: hsl(250, 60%, 10%);
+        --test1: #ebf2ff;
+        --test2: color-mix(in srgb, var(--test1), var(--test1));
+
+        --bg1: hsl(240, 40%, 15%);
+        --bg1_border: color-mix(in srgb, var(--bg1), var(--cyan) 16%);
+
+        --bg2: hsl(240, 40%, 20%);
+        --bg2_border: color-mix(in srgb, var(--bg2), var(--cyan) 16%);
+
+        --black: color-mix(in srgb, var(--bg0), black);
+        --red: hsl(350, 100%, 70%);
+        --green: hsl(150, 100%, 65%);
+        --yellow: hsl(40, 100%, 75%);
+        --blue: hsl(235, 100%, 65%);
+        --magenta: hsl(210, 100%, 65%);
+        --cyan: hsl(195, 100%, 80%);
+        --white: #ebf2ff;
+
+        --hi_black: color-mix(in srgb, var(--black), var(--white));
+        --hi_red: color-mix(in srgb, var(--red), var(--white));
+        --hi_green: color-mix(in srgb, var(--green), var(--white));
+        --hi_yellow: color-mix(in srgb, var(--yellow), var(--white));
+        --hi_blue: color-mix(in srgb, var(--blue), var(--white));
+        --hi_magenta: color-mix(in srgb, var(--magenta), var(--white));
+        --hi_cyan: color-mix(in srgb, var(--cyan), var(--white));
+        --hi_white: color-mix(in srgb, var(--white), var(--white));
+
+        --real_black: black;
+
+        --punctuation: hsl(230, 25%, 55%);
+        --comment: color-mix(in srgb, var(--punctuation), var(--bg0));
+        --variable: var(--white);
+        --number: var(--green);
+        --string: var(--blue);
+        --keyword: var(--magenta);
+        --type: var(--cyan);
+        --structure: var(--punctuation);
+        --function: var(--white);
+        --property: var(--white);
+        --declaration: var(--function);
+
+        --transparent: #00000000;
+      }
+
+      :root #day {
+        --bg0: hsl(250, 60%, 96%);
+
+        --bg1: hsl(240, 40%, 92%);
+        --bg1_border: color-mix(in srgb, var(--bg1), var(--black) 16%);
+
+        --bg2: hsl(240, 40%, 88%);
+        --bg2_border: color-mix(in srgb, var(--bg2), var(--black) 16%);
+
+        --black: color-mix(in srgb, var(--bg0) 25%, black);
+        --red: hsl(345, 100%, 65%);
+        --green: hsl(150, 90%, 45%);
+        --yellow: hsl(40, 100%, 70%);
+        --blue: hsl(235, 100%, 70%);
+        --magenta: hsl(215, 100%, 60%);
+        --cyan: hsl(200, 100%, 65%);
+        --white: #ebf2ff;
+
+        --hi_black: color-mix(in srgb, var(--black), var(--white));
+        --hi_red: color-mix(in srgb, var(--red), var(--white));
+        --hi_green: color-mix(in srgb, var(--green), var(--white));
+        --hi_yellow: color-mix(in srgb, var(--yellow), var(--white));
+        --hi_blue: color-mix(in srgb, var(--blue), var(--white));
+        --hi_magenta: color-mix(in srgb, var(--magenta), var(--white));
+        --hi_cyan: color-mix(in srgb, var(--cyan), var(--white));
+        --hi_white: color-mix(in srgb, var(--white), var(--white));
+
+        --punctuation: hsl(230, 35%, 60%);
+        --comment: color-mix(in srgb, var(--punctuation), var(--bg0));
+        --variable: var(--black);
+        --number: var(--green);
+        --string: var(--blue);
+        --keyword: var(--magenta);
+        --type: var(--cyan);
+        --structure: var(--punctuation);
+        --function: var(--black);
+        --property: var(--black);
+        --declaration: var(--function);
+
+        --transparent: #00ff007f;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      #night,
+      #day {
+        padding: 2rem;
+      }
+
+      #night {
+        background-color: var(--bg0);
+      }
+
+      #night pre {
+        color: var(--white);
+      }
+
+      #day {
+        background-color: var(--bg0);
+      }
+
+      #day pre {
+        color: var(--white);
+      }
+
+      span {
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        margin: 0.5rem;
+        border-radius: 0.5rem;
+      }
+
+      pre {
+        font-size: 1.5rem;
+        font-family: Roboto Mono;
+        letter-spacing: -1px;
+      }
+
+      pre span {
+        all: unset;
+      }
+
+      pre span[style="color: var(--property)"] {
+        font-style: italic;
+      }
+
+      pre span[style="color: var(--comment)"] {
+        font-style: italic;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="night">
+      <div style="background: var(--test1)">test</div>
+      <div style="background: var(--test2)">test</div>
+      <div>
+        <span style="background: var(--black)"></span>
+        <span style="background: var(--red)"></span>
+        <span style="background: var(--green)"></span>
+        <span style="background: var(--yellow)"></span>
+        <span style="background: var(--blue)"></span>
+        <span style="background: var(--magenta)"></span>
+        <span style="background: var(--cyan)"></span>
+        <span style="background: var(--white)"></span>
+      </div>
+      <div>
+        <span style="background: var(--hi_black)"></span>
+        <span style="background: var(--hi_red)"></span>
+        <span style="background: var(--hi_green)"></span>
+        <span style="background: var(--hi_yellow)"></span>
+        <span style="background: var(--hi_blue)"></span>
+        <span style="background: var(--hi_magenta)"></span>
+        <span style="background: var(--hi_cyan)"></span>
+        <span style="background: var(--hi_white)"></span>
+      </div>
+      <div>
+        <span
+          style="background: var(--bg1); border: 1px solid var(--bg1_border)"
+        ></span>
+        <span
+          style="background: var(--bg2); border: 1px solid var(--bg2_border)"
+        ></span>
+      </div>
+      <div>
+        <pre>
+<span style="color: var(--comment)">// pages/api/hello.ts</span>
+<span style="color: var(--structure)">import type</span> <span style="color: var(--punctuation)">{</span> <span style="color: var(--white)">NextApiRequest</span><span style="color: var(--punctuation)">,</span> <span style="color: var(--white)">NextApiResponse</span> <span style="color: var(--punctuation)">}</span> <span style="color: var(--structure)">from</span> <span style="color: var(--string)">'next'</span>
+
+<span style="color: var(--keyword)">type</span> <span style="color: var(--declaration)">Data</span> <span style="color: var(--punctuation)">=</span> <span style="color: var(--punctuation)">{</span>
+  <span style="color: var(--property)">name</span><span style="color: var(--punctuation)">:</span> <span style="color: var(--type)">string</span>
+<span style="color: var(--punctuation)">}</span>
+
+<span style="color: var(--structure)">export</span> <span style="color: var(--structure)">default</span> <span style="color: var(--keyword)">function</span> <span style="color: var(--declaration)">handler</span><span style="color: var(--punctuation)">(</span>
+  <span style="color: var(--white)">req</span><span style="color: var(--punctuation)">:</span> <span style="color: var(--type)">NextApiRequest</span><span style="color: var(--punctuation)">,</span>
+  <span style="color: var(--white)">res</span><span style="color: var(--punctuation)">:</span> <span style="color: var(--type)">NextApiResponse</span><span style="color: var(--punctuation)">&lt;</span><span style="color: var(--type)">Data</span><span style="color: var(--punctuation)">&gt;</span>
+<span style="color: var(--punctuation)">)</span> <span style="color: var(--punctuation)">{</span>
+  <span style="color: var(--white)">res</span><span style="color: var(--punctuation)">.</span><span style="color: var(--function)">status</span><span style="color: var(--punctuation)">(</span><span style="color: var(--number)">200</span><span style="color: var(--punctuation)">)</span><span style="color: var(--punctuation)">.</span><span style="color: var(--function)">json</span><span style="color: var(--punctuation)">({</span> <span style="color: var(--property)">name</span><span style="color: var(--punctuation)">:</span> <span style="color: var(--string)">'John Doe'</span> <span style="color: var(--punctuation)">})</span>
+<span style="color: var(--punctuation)">}</span>
+        </pre>
+      </div>
+    </div>
+
+    <div id="day">
+      <div>
+        <span style="background: var(--black)"></span>
+        <span style="background: var(--red)"></span>
+        <span style="background: var(--green)"></span>
+        <span style="background: var(--yellow)"></span>
+        <span style="background: var(--blue)"></span>
+        <span style="background: var(--magenta)"></span>
+        <span style="background: var(--cyan)"></span>
+        <span style="background: var(--white)"></span>
+      </div>
+      <div>
+        <span style="background: var(--hi_black)"></span>
+        <span style="background: var(--hi_red)"></span>
+        <span style="background: var(--hi_green)"></span>
+        <span style="background: var(--hi_yellow)"></span>
+        <span style="background: var(--hi_blue)"></span>
+        <span style="background: var(--hi_magenta)"></span>
+        <span style="background: var(--hi_cyan)"></span>
+        <span style="background: var(--hi_white)"></span>
+      </div>
+      <div>
+        <span
+          style="background: var(--bg1); border: 1px solid var(--bg1_border)"
+        ></span>
+        <span
+          style="background: var(--bg2); border: 1px solid var(--bg2_border)"
+        ></span>
+      </div>
+      <div>
+        <pre>
+<span style="color: var(--comment)">// pages/api/hello.ts</span>
+<span style="color: var(--structure)">import type</span> <span style="color: var(--punctuation)">{</span> <span style="color: var(--variable)">NextApiRequest</span><span style="color: var(--punctuation)">,</span> <span style="color: var(--variable)">NextApiResponse</span> <span style="color: var(--punctuation)">}</span> <span style="color: var(--structure)">from</span> <span style="color: var(--string)">'next'</span>
+
+<span style="color: var(--keyword)">type</span> <span style="color: var(--declaration)">Data</span> <span style="color: var(--punctuation)">=</span> <span style="color: var(--punctuation)">{</span>
+  <span style="color: var(--property)">name</span><span style="color: var(--punctuation)">:</span> <span style="color: var(--type)">string</span>
+<span style="color: var(--punctuation)">}</span>
+
+<span style="color: var(--structure)">export</span> <span style="color: var(--structure)">default</span> <span style="color: var(--keyword)">function</span> <span style="color: var(--declaration)">handler</span><span style="color: var(--punctuation)">(</span>
+  <span style="color: var(--variable)">req</span><span style="color: var(--punctuation)">:</span> <span style="color: var(--type)">NextApiRequest</span><span style="color: var(--punctuation)">,</span>
+  <span style="color: var(--variable)">res</span><span style="color: var(--punctuation)">:</span> <span style="color: var(--type)">NextApiResponse</span><span style="color: var(--punctuation)">&lt;</span><span style="color: var(--type)">Data</span><span style="color: var(--punctuation)">&gt;</span>
+<span style="color: var(--punctuation)">)</span> <span style="color: var(--punctuation)">{</span>
+  <span style="color: var(--variable)">res</span><span style="color: var(--punctuation)">.</span><span style="color: var(--function)">status</span><span style="color: var(--punctuation)">(</span><span style="color: var(--number)">200</span><span style="color: var(--punctuation)">)</span><span style="color: var(--punctuation)">.</span><span style="color: var(--function)">json</span><span style="color: var(--punctuation)">({</span> <span style="color: var(--property)">name</span><span style="color: var(--punctuation)">:</span> <span style="color: var(--string)">'John Doe'</span> <span style="color: var(--punctuation)">})</span>
+<span style="color: var(--punctuation)">}</span>
+        </pre>
+      </div>
+    </div>
+
+    <script>
+      window.onload = () =>
+        fetch("/colours", {
+          method: "POST",
+          body: JSON.stringify(
+            Array.from(document.styleSheets[0].rules)
+              .filter((item) => item.selectorText.match(":root #.+"))
+              .reduce((acc, theme) => {
+                const themeName = theme.selectorText.match(/[^#]+$/);
+                return {
+                  ...acc,
+                  [themeName]: Object.values(theme.style).reduce(
+                    (acc, colour) => {
+                      const s = document.createElement("span");
+                      s.setAttribute("style", `background: var(${colour})`);
+                      document.getElementById(themeName).append(s);
+                      return {
+                        ...acc,
+                        [colour.slice(2)]: getComputedStyle(s).backgroundColor,
+                      };
+                    },
+                    {}
+                  ),
+                };
+              }, {})
+          ),
+        });
+    </script>
+  </body>
+</html>
